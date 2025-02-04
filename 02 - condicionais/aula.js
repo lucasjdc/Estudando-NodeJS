@@ -1,7 +1,7 @@
 const numero = 5;
-const isNumeroEPar = (numero % 2) === 0;
+const isNumeroPar = (numero % 2) === 0;
 
-if (isNumeroEPar) {
+if (isNumeroPar) {
 	console.log('O número é par');
 	} else {
 	console.log('O número é impar');
