@@ -13,22 +13,18 @@ Imprima no console o valor que será gasto para realizar esta viagem.
 
 */
 
-const precoEtanol = 5.79;
-const precoGasolina = 6.66;
-const tipoCombustivel = 'Gasolina';
+const combustiveis = {
+	Gasolina: {preco: 6.66, desempenho: 15.3},
+	Etanol: {preco: 5.79, desempenho: 10.8},
+};
 
-// desempenho de um HB20S 1.0
-const desempenhoEtanol = 10.8;
-const desempenhoGasolina = 15.3;
-
+const tipoCompustivel = 'Etanol';
 const distanciaPercorrida = 94;
 
-if (tipoCombustivel === 'Gasolina') {
-	const gastoGasolina = (distanciaPercorrida/desempenhoGasolina)*precoGasolina;
-	console.log('Valor gasto em gasolina: R$', gastoGasolina.toFixed(2));
-}
-
-if (tipoCombustivel === 'Etanol') {
-	const gastoEtanol = (distanciaPercorrida/desempenhoEtanol)*precoEtanol;
-	console.log('Valor gasto em etanol: R$', gastoEtanol.toFixed(2));
+if (combustiveis[tipoCompustivel]) {
+	const {  preco, desempenho  } = combustiveis[tipoCompustivel];
+	const gasto = (distanciaPercorrida / desempenho) * preco;
+	console.log(`Valor gasto em ${tipoCompustivel.toLowerCase()}: R$ ${gasto.toFixed(2)}`);
+} else {
+	console.log('Tipo de combustível inválido');
 }
