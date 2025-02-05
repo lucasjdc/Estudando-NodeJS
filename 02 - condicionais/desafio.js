@@ -2,7 +2,7 @@
 
 Faça um programa para calcular o valor de uma viagem.
 
-Você terá 3 variáveis. Sendo elas:
+Você terá 5 variáveis. Sendo elas:
 1 - Preço do etanol;
 2 - Preço da gasolina;
 3 - O tipo de combustivel que está no seu carro;
@@ -13,23 +13,22 @@ Imprima no console o valor que será gasto para realizar esta viagem.
 
 */
 
-let precoEtanol = 5.49;
-let precoGasolina = 6.49;
-
-let isEtanol = false;
+const precoEtanol = 5.79;
+const precoGasolina = 6.66;
+const tipoCombustivel = 'Gasolina';
 
 // desempenho de um HB20S 1.0
-let desempenhoEtanol = 10.8;
-let desempenhoGasolina = 15.3;  
+const desempenhoEtanol = 10.8;
+const desempenhoGasolina = 15.3;
 
-let distanciaPercorrida = 94;
+const distanciaPercorrida = 94;
 
-let gastoEtanol = (distanciaPercorrida/desempenhoEtanol)*precoEtanol;
-let gastoGasolina = (distanciaPercorrida/desempenhoGasolina)*precoGasolina;
-
-
-if (isEtanol) {
-	console.log('Valor gasto em etanol: R$', gastoEtanol.toFixed(2))	
-} else {
+if (tipoCombustivel === 'Gasolina') {
+	const gastoGasolina = (distanciaPercorrida/desempenhoGasolina)*precoGasolina;
 	console.log('Valor gasto em gasolina: R$', gastoGasolina.toFixed(2));
+}
+
+if (tipoCombustivel === 'Etanol') {
+	const gastoEtanol = (distanciaPercorrida/desempenhoEtanol)*precoEtanol;
+	console.log('Valor gasto em etanol: R$', gastoEtanol.toFixed(2));
 }
