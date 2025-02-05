@@ -13,17 +13,16 @@ Classificação:
 */
 
 const nota1 = 8;
-const nota2 = 8;
-const nota3 = 8;
+const nota2 = 7;
+const nota3 = 9;
 
-const media = (nota1 + nota2 + nota3) / 3;
+const somaNota = (nota1 + nota2 + nota3);
+const media = somaNota / 3;
 
-if (media < 5) {		
-		console.log('Reprovado');
-} else if (media >= 5 && media < 7) {
+if (media < 5) {
+	console.log('Reprovado');
+} else if (media >= 5 && media <= 7) {
 	console.log('Recuperação');
 } else {
-	console.log('Aprovado');
+	console.log('Passou de semestre');
 }
-
-
