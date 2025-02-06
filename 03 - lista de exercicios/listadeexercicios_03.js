@@ -6,27 +6,26 @@ Utilize os códigos da tabela a seguir para ler qual a condição de
 pagamentos escolhido e efetuar o cálculo adequado.
 
 Código Condição de pagamento:
-- À vista Débito, recebe 10% de desconto;
-- À vista no Dinheiro ou PIX, recebe 15% de desconto;
-- Em duas vezes, preço normal de etiqueta sem juros;
-- Acima de duas vezes, preço normal de etiqueta mais juros de 10%;
+1 - À vista Débito, recebe 10% de desconto;
+2 - À vista no Dinheiro ou PIX, recebe 15% de desconto;
+3 - Em duas vezes, preço normal de etiqueta sem juros;
+4 - Acima de duas vezes, preço normal de etiqueta mais juros de 10%;
 
 */ 
 
-
 const precoEtiqueta = 100;
-const tipoPagamento = 'Acima de duas vezes';
+const formaDePagamento = 5;
 let desconto = 0;
 let juros = 0;
 let valorPago;
 
-if (tipoPagamento === 'Débito') {    
+if (formaDePagamento === 1) {    
     desconto = 0.1;    
-} else if (tipoPagamento === 'Dinheiro' || tipoPagamento === 'PIX') {
+} else if (formaDePagamento === 2) {
     desconto = 0.15;
-} else if (tipoPagamento === 'Duas vezes') {
+} else if (formaDePagamento === 3) {
     desconto = 0;
-} else if (tipoPagamento === 'Acima de duas vezes') {
+} else if (formaDePagamento === 4) {
     juros = 0.1;    
 } else {
     console.log('Forma de pagamento inválida!');
@@ -34,5 +33,4 @@ if (tipoPagamento === 'Débito') {
 
 valorPago = precoEtiqueta *  (1 - desconto) * (1 + juros);
 
-console.log(`Tipo de pagamento: ${tipoPagamento}`);
 console.log(`Total a pagar: R$ ${valorPago.toFixed(2)}`);
